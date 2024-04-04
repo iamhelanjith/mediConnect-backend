@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
-// const mongoose = require('mongoose');
+const host = "0.0.0.0";
+
 
 const dbConfig = require("./config/dbConfig");
 const userRouter = require("./routes/userRoute");
