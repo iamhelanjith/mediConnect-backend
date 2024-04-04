@@ -1,5 +1,7 @@
 const express = require("express");
+const app = express();
 const dotenv = require("dotenv");
+dotenv.config(); 
 const host = "0.0.0.0";
 
 
@@ -8,8 +10,7 @@ const userRouter = require("./routes/userRoute");
 const adminRouter = require("./routes/adminRoute"); 
 const doctorRouter = require("./routes/doctorRoute"); 
 
-dotenv.config();
-const app = express();
+
 
 const port = process.env.PORT || 3001;
 
@@ -25,5 +26,5 @@ app.use("/api/doctor", doctorRouter);
 //     .then(() => console.log("connected to the database"))
 //     .catch((err) => console.log(err));
 
-app.listen(port, () => console.log("server is running on port", port));
+app.listen(port, host, () => console.log("server is running on port", port));
 dbConfig();
